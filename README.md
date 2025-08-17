@@ -6,6 +6,7 @@
 ### MongoDB
 
 Foi feito os testes dentro de um container com 0.5 de CPU e 512MB de RAM
-<img width="510" height="156" alt="Captura de tela 2025-08-17 033909" src="https://github.com/user-attachments/assets/4ec26ec0-b38a-4a07-b0a8-33cb8db344ff" />
+<img width="514" height="179" alt="image" src="https://github.com/user-attachments/assets/b7954640-d832-4c06-8665-91be67bf4482" />
 
-Processo termina antes de 20 minutos.
+
+Processo termina antes de 30 minutos.
