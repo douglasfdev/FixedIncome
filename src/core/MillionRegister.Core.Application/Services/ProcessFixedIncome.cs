@@ -17,7 +17,7 @@ public class ProcessFixedIncome(
 {
     private readonly ChannelReader<RecordBatchDto> _channelReader = channel.Reader;
     private readonly ChannelWriter<RecordBatchDto> _channelWriter = channel.Writer;
-    private readonly SemaphoreSlim _csvSemaphore = new(1, 1);
+    private readonly SemaphoreSlim _mongoSemaphore = new(5);
     private bool _headerWritten = false;
 
     public async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -92,7 +92,15 @@ public class ProcessFixedIncome(
 
             try
             {
-                await repository.AddMany(fixedIncomes, token: stoppingToken);
+                await _mongoSemaphore.WaitAsync(stoppingToken);
+                try
+                {
+                    await repository.AddMany(fixedIncomes, token: stoppingToken);
+                }
+                finally
+                {
+                    _mongoSemaphore.Release();
+                }
 
                 foreach (var record in item.Batch)
                 {
