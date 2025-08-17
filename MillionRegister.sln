@@ -4,7 +4,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5D9A4C1A-F35
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ports", "ports", "{895DD516-5005-47D2-A4F1-09EA68351371}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkerService1", "src\ports\WorkerService1\WorkerService1.csproj", "{3E3DE4B0-839E-4F6C-8452-6A5E8DAFCF7F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MillionRegister.Ports.FixedIncome", "src\ports\MillionRegister.Ports.FixedIncome\MillionRegister.Ports.FixedIncome.csproj", "{3E3DE4B0-839E-4F6C-8452-6A5E8DAFCF7F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "adapters", "adapters", "{1658ED10-A1DA-4097-9B8A-20539E1E92C9}"
 EndProject

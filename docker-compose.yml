@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: fixed-income:1.0.11
+    image: fixed-income:1.0.14
     ports:
       - 8080:8080
     networks:

@@ -18,12 +18,12 @@ public class ProcessFixedIncome(
     private readonly ChannelReader<RecordBatchDto> _channelReader = channel.Reader;
     private readonly ChannelWriter<RecordBatchDto> _channelWriter = channel.Writer;
     private readonly SemaphoreSlim _mongoSemaphore = new(5);
-    private bool _headerWritten = false;
 
     public async Task ExecuteAsync(CancellationToken stoppingToken)
     {
         var assembly = Assembly.GetExecutingAssembly();
-        using var stream = assembly.GetManifestResourceStream("MillionRegister.Core.Application.FixedIncomeData.dados.csv");
+        await using var stream = assembly
+            .GetManifestResourceStream("MillionRegister.Core.Application.FixedIncomeData.dados.csv");
         
         if (stream == null)
         {
@@ -33,10 +33,10 @@ public class ProcessFixedIncome(
 
         logger.LogInformation("Starting processing of {file}", stream.GetType().Name);
 
-        var producer = Task.Run(() => ReadCsvFile(stream, stoppingToken));
+        var producer = Task.Run(() => ReadCsvFile(stream, stoppingToken), stoppingToken);
 
         var consumers = Enumerable.Range(0, Environment.ProcessorCount)
-            .Select(_ => Task.Run(() => ProcessBatches(stoppingToken)))
+            .Select(_ => Task.Run(() => ProcessBatches(stoppingToken), stoppingToken))
             .ToArray();
 
         await Task.WhenAll(producer);

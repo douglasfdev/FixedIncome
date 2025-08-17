@@ -15,4 +15,8 @@
       <ProjectReference Include="..\..\adapters\MillionRegister.Adapter.MongoDB\MillionRegister.Adapter.MongoDB.csproj" />
       <ProjectReference Include="..\..\core\MillionRegister.Core.Application\MillionRegister.Core.Application.csproj" />
     </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Configuration\EnvironmentVariables\" />
+    </ItemGroup>
 </Project>
