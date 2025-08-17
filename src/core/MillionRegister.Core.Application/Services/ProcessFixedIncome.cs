@@ -107,7 +107,7 @@ public class ProcessFixedIncome(
                     if (CheckDiscrepancy(record))
                     {
                         logger.LogWarning("Discrepancy found for {externalId}", record.ExternalId);
-                        //await WriteDiscrepancyAsync(record);
+                        //@TODO Algo como fallback ou alertar os responsáveis.  await HandleDiscrepancyAsync(record);
                     }
                 }
             }
@@ -126,30 +126,4 @@ public class ProcessFixedIncome(
     {
         return record.Quantity <= 0;
     }
-    
-    // private async Task WriteDiscrepancyAsync(FixedIncome record)
-    // {
-    //     await _csvSemaphore.WaitAsync();
-    //     try
-    //     {
-    //         bool writeHeader = false;
-    //         if (!_headerWritten && !File.Exists(Path.Combine(_uploadDirectory, "discrepancy_report.csv")))
-    //         {
-    //             writeHeader = true;
-    //             _headerWritten = true;
-    //         }
-    //
-    //         using var stream = new FileStream(Path.Combine(_uploadDirectory, "discrepancy_report.csv"), FileMode.Append, FileAccess.Write, FileShare.Read);
-    //         using var writer = new StreamWriter(stream);
-    //
-    //         if (writeHeader)
-    //             await writer.WriteLineAsync("ExternalId,OrderId,OrderDateTime,AssetId,TradingAccount,Quantity,UnitPrice");
-    //
-    //         await writer.WriteLineAsync($"{record.ExternalId},{record.OrderId},{record.OrderDateTime:O},{record.AssetId},{record.TradingAccount},{record.Quantity},{record.UnitPrice}");
-    //     }
-    //     finally
-    //     {
-    //         _csvSemaphore.Release();
-    //     }
-    // }
 }
