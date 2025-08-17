@@ -2,7 +2,7 @@
 
 ## Foi utilizado:
 ### Channels
-### SemaphreSlim
+### SemaphoreSlim
 ### MongoDB
 
 Foi feito os testes dentro de um container com 0.5 de CPU e 512MB de RAM
