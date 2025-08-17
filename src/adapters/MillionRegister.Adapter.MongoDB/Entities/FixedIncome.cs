@@ -5,25 +5,56 @@ namespace MillionRegister.Adapter.MongoDB.Entities;
 
 public class FixedIncome
 {
+    [BsonConstructor]
+    public FixedIncome(
+        string externalId,
+        string orderId,
+        DateTime orderDateTime,
+        string assetId,
+        string tradingAccount,
+        decimal quantity,
+        decimal unitPrice
+    )
+    {
+        ExternalId = externalId;
+        OrderId = orderId;
+        OrderDateTime = orderDateTime;
+        AssetId = assetId;
+        TradingAccount = tradingAccount;
+        Quantity = quantity;
+        UnitPrice = unitPrice;
+    }
+
     [BsonId]
     [BsonRepresentation(BsonType.String)]
-    public string ExternalId { get; set; }
-    
+    public string ExternalId { get; }
+
     [BsonElement("OrderId")]
-    public string OrderId { get; set; }
-    
+    public string OrderId { get; }
+
     [BsonElement("OrderDateTime")]
-    public DateTime OrderDateTime { get; set; }
+    public DateTime OrderDateTime { get; }
     
     [BsonElement("AssetId")]
-    public string AssetId { get; set; }
+    public string AssetId { get; }
     
     [BsonElement("TradingAccount")]
-    public string TradingAccount { get; set; }
+    public string TradingAccount { get; }
     
     [BsonElement("Quantity")]
-    public decimal Quantity { get; set; }
+    public decimal Quantity { get; }
     
     [BsonElement("UnitPrice")]
-    public decimal UnitPrice { get; set; }
+    public decimal UnitPrice { get; }
+    
+    public static implicit operator Core.Domain.Entities.FixedIncome(FixedIncome entity)
+        => new (
+            entity.ExternalId,
+            entity.OrderId,
+            entity.OrderDateTime,
+            entity.AssetId,
+            entity.TradingAccount,
+            entity.Quantity,
+            entity.UnitPrice
+        );
 }
