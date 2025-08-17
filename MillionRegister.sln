@@ -1,0 +1,58 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5D9A4C1A-F354-4BD4-8875-1E14588187BC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ports", "ports", "{895DD516-5005-47D2-A4F1-09EA68351371}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkerService1", "src\ports\WorkerService1\WorkerService1.csproj", "{3E3DE4B0-839E-4F6C-8452-6A5E8DAFCF7F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "adapters", "adapters", "{1658ED10-A1DA-4097-9B8A-20539E1E92C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MillionRegister.Adapter.MongoDB", "src\adapters\MillionRegister.Adapter.MongoDB\MillionRegister.Adapter.MongoDB.csproj", "{D334D777-8250-4E5B-BA38-AB5C9D18E0F3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "core", "core", "{026401E8-0163-4349-91A9-97C79DCC595C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MillionRegister.Core.Common", "src\core\MillionRegister.Core.Common\MillionRegister.Core.Common.csproj", "{3A3BA227-F563-471F-94B5-6C4CF98848DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MillionRegister.Core.Application", "src\core\MillionRegister.Core.Application\MillionRegister.Core.Application.csproj", "{048D5FC6-F7D7-4CED-8819-74C7A4AAA009}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MillionRegister.Core.Domain", "src\core\MillionRegister.Core.Domain\MillionRegister.Core.Domain.csproj", "{CE6223E5-5D8E-451E-AD4B-5C8A58574A47}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{895DD516-5005-47D2-A4F1-09EA68351371} = {5D9A4C1A-F354-4BD4-8875-1E14588187BC}
+		{3E3DE4B0-839E-4F6C-8452-6A5E8DAFCF7F} = {895DD516-5005-47D2-A4F1-09EA68351371}
+		{1658ED10-A1DA-4097-9B8A-20539E1E92C9} = {5D9A4C1A-F354-4BD4-8875-1E14588187BC}
+		{D334D777-8250-4E5B-BA38-AB5C9D18E0F3} = {1658ED10-A1DA-4097-9B8A-20539E1E92C9}
+		{026401E8-0163-4349-91A9-97C79DCC595C} = {5D9A4C1A-F354-4BD4-8875-1E14588187BC}
+		{3A3BA227-F563-471F-94B5-6C4CF98848DC} = {026401E8-0163-4349-91A9-97C79DCC595C}
+		{048D5FC6-F7D7-4CED-8819-74C7A4AAA009} = {026401E8-0163-4349-91A9-97C79DCC595C}
+		{CE6223E5-5D8E-451E-AD4B-5C8A58574A47} = {026401E8-0163-4349-91A9-97C79DCC595C}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E3DE4B0-839E-4F6C-8452-6A5E8DAFCF7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E3DE4B0-839E-4F6C-8452-6A5E8DAFCF7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E3DE4B0-839E-4F6C-8452-6A5E8DAFCF7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E3DE4B0-839E-4F6C-8452-6A5E8DAFCF7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D334D777-8250-4E5B-BA38-AB5C9D18E0F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D334D777-8250-4E5B-BA38-AB5C9D18E0F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D334D777-8250-4E5B-BA38-AB5C9D18E0F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D334D777-8250-4E5B-BA38-AB5C9D18E0F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A3BA227-F563-471F-94B5-6C4CF98848DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A3BA227-F563-471F-94B5-6C4CF98848DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A3BA227-F563-471F-94B5-6C4CF98848DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A3BA227-F563-471F-94B5-6C4CF98848DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{048D5FC6-F7D7-4CED-8819-74C7A4AAA009}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{048D5FC6-F7D7-4CED-8819-74C7A4AAA009}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{048D5FC6-F7D7-4CED-8819-74C7A4AAA009}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{048D5FC6-F7D7-4CED-8819-74C7A4AAA009}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE6223E5-5D8E-451E-AD4B-5C8A58574A47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE6223E5-5D8E-451E-AD4B-5C8A58574A47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE6223E5-5D8E-451E-AD4B-5C8A58574A47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE6223E5-5D8E-451E-AD4B-5C8A58574A47}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

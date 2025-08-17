@@ -1,0 +1,32 @@
+services:
+  fixed-income:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: fixed-income:1.0.11
+    ports:
+      - 8080:8080
+    networks:
+      - fixed-income
+    depends_on:
+      - mongodb
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+  
+  mongodb:
+    image: mongo:7.0.23
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: username
+      MONGO_INITDB_ROOT_PASSWORD: password
+    ports:
+      - 27017:27017
+    networks:
+      - fixed-income
+
+networks:
+  fixed-income:
+    driver: bridge

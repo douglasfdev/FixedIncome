@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\adapters\MillionRegister.Adapter.MongoDB\MillionRegister.Adapter.MongoDB.csproj" />
+      <ProjectReference Include="..\MillionRegister.Core.Common\MillionRegister.Core.Common.csproj" />
+      <ProjectReference Include="..\MillionRegister.Core.Domain\MillionRegister.Core.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Include="FixedIncomeData\dados.csv" />
+    </ItemGroup>
+
+</Project>
